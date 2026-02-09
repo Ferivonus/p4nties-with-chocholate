@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Varsayılan Arka Plan: Tam Siyah */
+  --background: #000000; 
+  /* Varsayılan Yazı Rengi: Taş Grisi (Stone-400) */
+  --foreground: #a8a29e; 
+  
+  /* Özel Renk Değişkenleri */
+  --ferivon-red: #450a0a; /* Koyu Kan Kırmızısı */
+  --ferivon-stone: #1c1917; /* Koyu Taş Rengi */
 }
 
-@theme inline {
+/* Tailwind Konfigürasyonu */
+@theme {
+  /* Layout.tsx'te tanımladığımız font değişkenlerini buraya bağlıyoruz */
+  --font-cinzel: var(--font-cinzel);
+  --font-cormorant: var(--font-cormorant);
+
+  /* Renkleri sisteme tanıtıyoruz */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Temel Ayarlar */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Varsayılan font: Eski kitap görünümü (Cormorant) */
+  font-family: var(--font-cormorant), serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Başlıklar için varsayılan font: Gotik (Cinzel) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cinzel), serif;
+}
+
+/* --- ESTETİK DOKUNUŞLAR --- */
+
+/* Metin Seçimi (Mouse ile seçince) */
+::selection {
+  background-color: #450a0a; /* Koyu kırmızı arka plan */
+  color: #e7e5e4; /* Açık gri yazı */
+}
+
+/* Özel Scrollbar (Kaydırma Çubuğu) */
+/* Webkit tarayıcılar (Chrome, Safari, Edge) için */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0a09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292524; /* Koyu gri tutacak */
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f1d1d; /* Üzerine gelince kırmızı olsun */
 }
