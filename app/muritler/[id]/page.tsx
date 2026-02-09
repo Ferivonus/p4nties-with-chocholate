@@ -48,7 +48,7 @@ const disciples: Disciple[] = [
   {
     id: 1,
     ref: "IX-001",
-    name: "Orkun Öztunç",
+    name: "Jylus",
     level: "Yüce Hiçlik",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
     role: "Kurucu & Baş Rehber",
@@ -63,7 +63,7 @@ const disciples: Disciple[] = [
   {
     id: 2,
     ref: "IX-002",
-    name: "Azra Kara",
+    name: "İnsancık",
     level: "Adalet Terazisi",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
     role: "Zihin Okuyucu",
@@ -76,7 +76,7 @@ const disciples: Disciple[] = [
   {
     id: 3,
     ref: "IX-003",
-    name: "Hasan Kılıcı",
+    name: "Kawe",
     level: "Adalet Terazisi",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     role: "Baş Yargıç",
@@ -89,7 +89,7 @@ const disciples: Disciple[] = [
   {
     id: 4,
     ref: "IX-004",
-    name: "Ender Üresin",
+    name: "Comrade",
     level: "Adalet Terazisi",
     image: "https://images.unsplash.com/photo-1488161628813-99c974c7904e?w=800&q=80",
     role: "Kâtip",
@@ -102,7 +102,7 @@ const disciples: Disciple[] = [
   {
     id: 5,
     ref: "IX-005",
-    name: "Mahmut Onur Er",
+    name: "Ayak adam Onur",
     level: "Adalet Terazisi",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
     role: "Muhafız",
@@ -117,7 +117,7 @@ const disciples: Disciple[] = [
   {
     id: 6,
     ref: "IX-006",
-    name: "Elif Beyza Yorulmaz",
+    name: "Uyku",
     level: "Günahkar",
     image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
     role: "Çilekeş",
