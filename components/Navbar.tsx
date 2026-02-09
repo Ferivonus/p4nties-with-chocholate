@@ -4,12 +4,20 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
+// --- SABİT VERİLER ---
+const LINKS = [
+  { name: 'BAŞLANGIÇ', href: '/' },
+  { name: 'ARŞİV', href: '/blog' },
+  { name: 'HİYERARŞİ', href: '/muritler' },
+  { name: 'KAPI', href: '/iletisim' },
+];
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll durumunu takip et
+  // --- SCROLL DİNLEYİCİSİ ---
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -18,22 +26,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Mobil menü açıldığında scroll'u kilitle
+  // --- MOBİL MENÜ KİLİDİ ---
+  // Menü açıldığında arka plandaki sayfanın kaymasını engeller
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     return () => { document.body.style.overflow = 'unset'; };
   }, [isMobileMenuOpen]);
-
-  const links = [
-    { name: 'BAŞLANGIÇ', href: '/' },
-    { name: 'ARŞİV', href: '/blog' },
-    { name: 'HİYERARŞİ', href: '/muritler' },
-    { name: 'KAPI', href: '/iletisim' },
-  ];
 
   return (
     <>
@@ -46,8 +44,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
-          {/* LOGO & DURUM IŞIĞI */}
-          <Link href="/" className="group flex items-center gap-3 z-50" onClick={() => setIsMobileMenuOpen(false)}>
+          {/* --- LOGO & DURUM IŞIĞI --- */}
+          <Link 
+            href="/" 
+            className="group flex items-center gap-3 z-50" 
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             <div className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-700"></span>
@@ -57,10 +59,9 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* MASAÜSTÜ MENÜ */}
+          {/* --- MASAÜSTÜ MENÜ --- */}
           <div className="hidden md:flex gap-12 items-center">
-            {links.map((link) => {
-              // Anasayfa haricinde, alt rotalarda da parent linki aktif göster
+            {LINKS.map((link) => {
               const isActive = link.href === '/' 
                 ? pathname === '/' 
                 : pathname.startsWith(link.href);
@@ -69,19 +70,20 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`
-                    relative font-cinzel text-[10px] tracking-[0.2em] uppercase transition-all duration-500 py-2 group
-                    ${isActive ? 'text-red-600' : 'text-stone-500 hover:text-stone-200'}
-                  `}
+                  className={`relative font-cinzel text-[10px] tracking-[0.2em] uppercase transition-all duration-500 py-2 group ${
+                    isActive ? 'text-red-600' : 'text-stone-500 hover:text-stone-200'
+                  }`}
                 >
                   {link.name}
                   {/* Aktif Link Noktası */}
-                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-red-700 rounded-full transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-75'}`}></span>
+                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-red-700 rounded-full transition-all duration-500 ${
+                    isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-75'
+                  }`}></span>
                 </Link>
               );
             })}
 
-            {/* KATIL BUTONU */}
+            {/* Katıl Butonu */}
             <Link 
               href="/iletisim"
               className="group relative px-6 py-2 overflow-hidden border border-stone-800 hover:border-red-900 transition-colors duration-500"
@@ -93,7 +95,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* MOBİL MENÜ BUTONU (HAMBURGER) */}
+          {/* --- MOBİL MENÜ BUTONU (HAMBURGER) --- */}
           <button 
             className="md:hidden z-50 text-stone-300 hover:text-red-600 transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -108,7 +110,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBİL MENÜ OVERLAY */}
+      {/* --- MOBİL MENÜ OVERLAY --- */}
       <div 
         className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] flex flex-col items-center justify-center space-y-10 border-l border-stone-900 md:hidden ${
           isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
@@ -119,7 +121,7 @@ export default function Navbar() {
           IX
         </div>
 
-        {links.map((link, index) => (
+        {LINKS.map((link, index) => (
           <Link
             key={link.href}
             href={link.href}
@@ -131,7 +133,10 @@ export default function Navbar() {
           </Link>
         ))}
 
-        <div className="w-12 h-px bg-stone-800 my-8 transition-all duration-1000" style={{ transitionDelay: '600ms', opacity: isMobileMenuOpen ? 1 : 0 }}></div>
+        <div 
+          className="w-12 h-px bg-stone-800 my-8 transition-all duration-1000" 
+          style={{ transitionDelay: '600ms', opacity: isMobileMenuOpen ? 1 : 0 }}
+        ></div>
         
         <Link 
             href="/iletisim"
