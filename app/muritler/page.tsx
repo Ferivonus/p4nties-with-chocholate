@@ -91,7 +91,7 @@ const disciples = [
   {
     id: 8,
     ref: "IX-008",
-    name: "Nevzat Akyüz",
+    name: "hellokitty_69",
     level: "Günahkar",
     image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=800&q=80",
     role: "Arayışçı",
