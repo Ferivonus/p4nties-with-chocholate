@@ -1,4 +1,4 @@
-import { archives } from "@/data/blog/blog_first";
+import { archives } from "@/data/blog/blog_data";
 import type { Metadata } from "next";
 import Link from "next/link";
 

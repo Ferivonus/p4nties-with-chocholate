@@ -134,7 +134,7 @@ type Disciple = {
   {
     id: 8,
     ref: "IX-008",
-    name: " hellokitty_69",
+    name: " hellokitty",
     level: "Günahkar",
     image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=800&q=80",
     role: "Arayışçı",
@@ -169,5 +169,44 @@ type Disciple = {
     manifesto: "Aynadaki suretiyle savaşan adam. Samet, içindeki gücü biliyor ama ondan ölesiye korkuyor. Kendine inanırsa, başarısız olma lüksünü kaybedeceğinin farkında. Bu yüzden sürekli 'yetersizmiş' gibi davranır. Kendini sabote etmek, onun en büyük yeteneğidir. Başkalarının ona inanmasına izin vermez, çünkü o henüz kendine 'evet' dememiştir. Bir 'Imposter Sendromu' abidesi olarak, kendi ışığını kendi elleriyle boğar.",
     judgment: "Barut dolu bir fıçı, ama ateşlenmekten korkuyor. Kendi kendinin en büyük düşmanı.",
     stats: { voidResonance: 55, balance: 60, burden: 30 }
-  }
+   },
+  {
+    id: 11,
+    ref: "IX-011",
+    name: "Karga",
+    level: "Günahkar",
+    image: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800&q=80",
+    role: "Arayışçı",
+    joined: "Döngü VI • Sürgün",
+    sin: "KÖKSÜZLÜK",
+    manifesto: "Çabalamak onun için nefes almak gibidir; durursa boğulacağına inanır. Karga, hayatın kaosunda duygusal bir denge inşa etmeye çalışır, tuğla üstüne tuğla koyar. Ancak ne zaman arkasına baksa, inşa ettiği duvarın dibinde kimsenin olmadığını görür. Bu yalnızlık, en büyük heveslerini kursağında bırakan zehirdir. Ait olduğu yeri bulmak için diyar diyar gezerken korkularıyla yüzleşir. Bazen düşer, bazen vazgeçer ama ertesi sabah yine kanat çırpar. Çünkü bilir ki; çabalamaktan başka şansı, gitmekten başka yolu yoktur.",
+    judgment: "Muazzam bir iş gücü, ancak yakıtı hüzün. Aidiyet bulamazsa kendini tüketecek. Kök salmadıkça göğe yükselemez.",
+    stats: { voidResonance: 75, balance: 40, burden: 90 }
+   },
+  {
+    id: 12,
+    ref: "IX-012",
+    name: "Kont",
+    level: "Günahkar",
+    image: "https://images.unsplash.com/photo-1615813967515-e1838c1c5116?w=800&q=80",
+    role: "Arayışçı",
+    joined: "Döngü VII • Gel-Git",
+    sin: "İKİLİK",
+    manifesto: "Zihni, gece ile gündüzün hiç barışmadığı bir savaş alanıdır. Kont, iş dünyasının çarklarını çocukluğundan beri çevirir; çabalamakta usta, hissetmekte acemidir. Ellerinin nasırı kalbinin nasırından incedir. Ne iş yapacağını değil, sadece 'yapmayı' bilir. En büyük trajedisi, korkudan titrerken dünyaya cesaret dersi vermeye çalışmasıdır. O maskeyi indirdiği ve kendi korkularıyla el sıkıştığı gün, hayatın ipleri ilk kez başkasının değil, kendi ellerinde olacak. Huzur, korkmadığını iddia etmekte değil, korkuya rağmen yürümektedir.",
+    judgment: "Yüksek potansiyel, ancak tehlikeli derecede dengesiz. Kendi kaosunu yönetmeyi öğrenmezse, inşa ettiği her şeyi bir öfke nöbetinde yıkabilir.",
+    stats: { voidResonance: 80, balance: 25, burden: 85 }
+   },
+  {
+    id: 13,
+    ref: "IX-013",
+    name: "Canibal",
+    level: "Günahkar",
+    image: "https://images.unsplash.com/photo-1516575150278-77136aed6920?w=800&q=80",
+    role: "Arayışçı",
+    joined: "Döngü VII • Kabuk",
+    sin: "YABANCILAŞMA",
+    manifesto: "Sessizliği, konuşmaktan önce öğrendi. Cani için sosyalleşmek doğal bir akış değil, insan olmanın ödenmesi gereken zorunlu vergisidir. İnsanların arasına karışması, ezberlenmiş bir tiyatro sahnesine çıkmak gibidir; replikleri bilir ama aidiyeti sorgular. Normlara inandığı için değil, sadece o insani sıcaklığa muhtaç olduğu için uzatır elini. O adım, bazen garip, bazen ürkektir ama her zaman gerçektir. Kendi içine o kadar derin kazmıştır ki, dışarı çıkmak zaman alacaktır. Ancak bilmelidir ki; en yalnız hissettiği o karanlık odada bile, gölgemiz onun omuzundadır. Asla terk edilmemiştir.",
+    judgment: "Kalabalıklar içinde bir sürgün. Sosyal uyumsuzluğu bir kusur değil, derinliğinin yüzeye vuramamasındandır. Anlaşılmayı bekleyen bir kilit.",
+    stats: { voidResonance: 85, balance: 50, burden: 70 }
+   }
 ];

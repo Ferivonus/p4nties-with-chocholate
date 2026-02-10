@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-stone-400 selection:bg-red-900 selection:text-white relative">
       
-      {/* GLOBAL DOKU: Tüm siteye sinematik/eski bir hava katan noise efekti */}
+      {/* GLOBAL DOKU */}
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 pointer-events-none z-50"></div>
 
       {/* 1. HERO: MUTLAK İRADE */}
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. DOKTRİN: ÜÇ SÜTUN (THE PILLARS) */}
+      {/* 2. DOKTRİN: ÜÇ SÜTUN */}
       <section className="bg-black py-32 px-6 relative border-b border-stone-900">
         <div className="max-w-7xl mx-auto">
           
@@ -117,9 +117,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. MÜRİTLER TEASER: IX'UN MECLİSİ */}
+      {/* 3. MÜRİTLER TEASER */}
       <section className="py-32 border-b border-stone-900 bg-stone-950 relative overflow-hidden">
-        {/* Arka plan tipografisi */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 text-[30vw] font-cinzel font-black text-black select-none pointer-events-none opacity-50 leading-none">
           IX
         </div>
@@ -136,7 +135,6 @@ export default function Home() {
               &quot;Ferivonus&apos;un masasında boş sandalye yoktur. Herkes kendi günahının ağırlığı kadar yer kaplar. Sen hangi yükü taşıyorsun?&quot;
             </p>
             
-            {/* Güncellenmiş Hiyerarşi Listesi */}
             <ul className="space-y-2 font-cinzel text-xs text-stone-600 tracking-widest uppercase">
               <li className="flex items-center gap-2"><span className="w-2 h-2 bg-red-900 animate-pulse"></span> MUTLAK İRADE (Kurucu)</li>
               <li className="flex items-center gap-2"><span className="w-2 h-2 bg-stone-800"></span> Yüce Hiçlik (Lider)</li>
@@ -157,11 +155,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Soyut Görsel Alanı - Güncellenmiş Sayaç */}
+          {/* Soyut Görsel Alanı - Güncellenmiş Sayaç (13 Mürit + 1 Kurucu) */}
           <div className="relative aspect-square border border-stone-800 bg-black flex items-center justify-center group overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?w=800&q=80')] opacity-20 grayscale bg-cover bg-center group-hover:scale-110 transition-transform duration-1000"></div>
             <div className="relative z-10 border border-stone-700 p-8 text-center bg-black/80 backdrop-blur-sm">
-               <p className="font-cinzel text-4xl text-stone-200">10 + 1</p>
+               <p className="font-cinzel text-4xl text-stone-200">13 + 1</p>
                <p className="font-mono text-xs text-stone-500 mt-2 tracking-widest">KAYITLI RUH</p>
             </div>
           </div>
@@ -186,18 +184,21 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-lg mx-auto pt-6">
+            
+            {/* YENİ EKLENEN YAZI: ÖNE ÇIKARILDI */}
             <Link 
-              href="/blog/gunahin-kutsalligi" 
+              href="/blog/tuket-kendini" 
               className="block p-6 border border-stone-900 bg-stone-950/50 hover:border-red-900 hover:bg-stone-950 transition-all text-left group"
             >
-              <span className="block font-cinzel text-xs text-red-800 mb-2">Vahiy I</span>
-              <span className="font-cormorant text-lg text-stone-300 group-hover:text-red-500 transition-colors">Lekenin Kutsallığı &rarr;</span>
+              <span className="block font-cinzel text-xs text-red-800 mb-2">Başlangıç • Yeni Ahit</span>
+              <span className="font-cormorant text-lg text-stone-300 group-hover:text-red-500 transition-colors">Tüket Kendini &rarr;</span>
             </Link>
+
             <Link 
               href="/blog/adaletin-soguk-yuzu" 
               className="block p-6 border border-stone-900 bg-stone-950/50 hover:border-red-900 hover:bg-stone-950 transition-all text-left group"
             >
-              <span className="block font-cinzel text-xs text-red-800 mb-2">Hüküm III</span>
+              <span className="block font-cinzel text-xs text-stone-600 mb-2">Hüküm III</span>
               <span className="font-cormorant text-lg text-stone-300 group-hover:text-red-500 transition-colors">Soğuk Terazi &rarr;</span>
             </Link>
           </div>

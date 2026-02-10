@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { disciples } from "@/data/muritler/muritler_first_page";
+import { disciples } from "@/data/muritler/muritler_data";
 
 export const metadata: Metadata = {
   title: "Karanlık Hiyerarşi | Ferivonizm",
