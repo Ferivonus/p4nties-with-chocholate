@@ -121,13 +121,13 @@ type Disciple = {
   {
     id: 7,
     ref: "IX-007",
-    name: "Melike",
+    name: "nontoxicnull",
     level: "Günahkar",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
     role: "Gölge",
     joined: "Döngü IV • Giz",
     sin: "SİLİKLEŞME",
-    manifesto: "Herkes sahnede olmak, alkışlanmak ve görülmek için çırpınırken; Melike kulisin en karanlık köşesini seçti. Varlığını silmek, sesini kısmak, renklerini soldurmak... Bu bir kaçış değil, egoya karşı kazanılmış sessiz bir zaferdir. O, odada olsa bile fark edilmez; bir duvardan veya bir gölgeden farksızdır. Bu mutlak görünmezlik, ona kimsenin duyamadığı sırları duyma ve kimsenin giremediği kapılardan süzülme gücü verir. O, Ferivonizm'in yaşayan hayaletidir.",
+    manifesto: "Herkes sahnede olmak, alkışlanmak ve görülmek için çırpınırken; nontoxicnull kulisin en karanlık köşesini seçti. Varlığını silmek, sesini kısmak, renklerini soldurmak... Bu bir kaçış değil, egoya karşı kazanılmış sessiz bir zaferdir. O, odada olsa bile fark edilmez; bir duvardan veya bir gölgeden farksızdır. Bu mutlak görünmezlik, ona kimsenin duyamadığı sırları duyma ve kimsenin giremediği kapılardan süzülme gücü verir. O, Ferivonizm'in yaşayan hayaletidir.",
     judgment: "Varlığı ile yokluğu ayırt edilemiyor. Mükemmel bir gözlemci.",
     stats: { voidResonance: 60, balance: 50, burden: 40 }
   },
