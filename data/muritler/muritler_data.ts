@@ -208,5 +208,18 @@ type Disciple = {
     manifesto: "Sessizliği, konuşmaktan önce öğrendi. Cani için sosyalleşmek doğal bir akış değil, insan olmanın ödenmesi gereken zorunlu vergisidir. İnsanların arasına karışması, ezberlenmiş bir tiyatro sahnesine çıkmak gibidir; replikleri bilir ama aidiyeti sorgular. Normlara inandığı için değil, sadece o insani sıcaklığa muhtaç olduğu için uzatır elini. O adım, bazen garip, bazen ürkektir ama her zaman gerçektir. Kendi içine o kadar derin kazmıştır ki, dışarı çıkmak zaman alacaktır. Ancak bilmelidir ki; en yalnız hissettiği o karanlık odada bile, gölgemiz onun omuzundadır. Asla terk edilmemiştir.",
     judgment: "Kalabalıklar içinde bir sürgün. Sosyal uyumsuzluğu bir kusur değil, derinliğinin yüzeye vuramamasındandır. Anlaşılmayı bekleyen bir kilit.",
     stats: { voidResonance: 85, balance: 50, burden: 70 }
-   }
+   },
+  {
+  id: 14,
+  ref: "IX-014",
+  name: "Hayalet",
+  level: "Araf",
+  image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?w=800&q=80", // Bulanık, siluet tarzı bir görsel
+  role: "Taklitçi",
+  joined: "Döngü VIII • Ayna",
+  sin: "İNKAR",
+  manifesto: "O, acıyı hissetmemek için kendi varlığını askıya almıştır. Ruhundaki boşluğu, başkalarının tutkularını taklit ederek doldurmaya çalışır; sevilen şarkıları dinler, başkalarının hobilerini edinir, sanki 'yaşayanların' ritüellerini yaparsa o da nefes alacakmış gibi. Kendi üzüntüsü kapıyı çaldığında, o çoktan arka pencereden kaçmıştır. Dünya için bir işlev olmaya o kadar odaklanmıştır ki, sadece 'kendisi' olarak değerli olup olmadığını bilmez. Mutluluk onun için ezberlenmesi gereken yabancı bir dildir. Ancak unutmamalıdır; başkasının ateşiyle ısınan, kendi soğuğunu asla yenemez. Kendini sevmek, kaçtığı o harabelere geri dönmeyi gerektirir.",
+  judgment: "Kendi hikayesinde figüran rolü oynayan bir başrol. Başkalarının hayatlarını üzerine giydiği bir kostüm sanıyor. Kurtuluşu, taklit ettiği neşede değil, yüzleşmekten korktuğu o derin sessizliktedir.",
+  stats: { voidResonance: 90, balance: 35, burden: 80 }
+  }
 ];
