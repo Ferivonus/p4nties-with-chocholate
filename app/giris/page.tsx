@@ -26,22 +26,17 @@ export default function LoginPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        credentials: 'include', // <--- BU SATIR EKLENDİ (Cookie için)
+        credentials: 'include',
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        // Token artık Cookie'de olduğu için localStorage'a token kaydetmiyoruz.
-        // Sadece arayüzde isim göstermek için kullanıcı adını tutabiliriz.
         if (data.username) localStorage.setItem('ferivon_user', data.username);
         if (data.role) localStorage.setItem('ferivon_role', data.role);
-
-        // Mabed'e yönlendir
         router.push('/mabed');
       } else {
-        // HATA: Backend'den gelen mesajı göster
-        setError(typeof data === 'string' ? data : (data.error || "Mühür kabul edilmedi."));
+        setError(data.error || "Mühür kabul edilmedi.");
       }
     } catch (err) {
       console.error(err);
@@ -69,7 +64,6 @@ export default function LoginPage() {
 
         <div className="text-center mb-10 space-y-2">
           <h1 className="font-cinzel text-3xl text-stone-200 tracking-widest">MABED KAPISI</h1>
-          {/* HATA DÜZELTİLDİ: Tırnak işaretleri &quot; olarak değiştirildi */}
           <p className="font-cormorant text-stone-500 italic text-lg">&quot;Sadece mühürlü ruhlar geçebilir.&quot;</p>
           <div className="w-12 h-px bg-red-900 mx-auto mt-4 opacity-50"></div>
         </div>
@@ -91,7 +85,8 @@ export default function LoginPage() {
               name="username"
               type="text" 
               required
-              className="w-full bg-black border border-stone-800 p-3 text-stone-300 font-cinzel focus:outline-none focus:border-red-900 focus:bg-stone-900/50 transition-all placeholder-stone-800"
+              // DEĞİŞİKLİK BURADA: font-cinzel yerine font-sans ve normal-case kullanıldı.
+              className="w-full bg-black border border-stone-800 p-3 text-stone-300 font-sans normal-case focus:outline-none focus:border-red-900 focus:bg-stone-900/50 transition-all placeholder-stone-800"
               placeholder="Gölgedeki ismin..."
             />
           </div>
@@ -104,7 +99,8 @@ export default function LoginPage() {
               name="password"
               type="password" 
               required
-              className="w-full bg-black border border-stone-800 p-3 text-stone-300 font-cormorant text-lg tracking-widest focus:outline-none focus:border-red-900 focus:bg-stone-900/50 transition-all placeholder-stone-800"
+              // DEĞİŞİKLİK BURADA: font-cormorant yerine font-sans ve normal-case kullanıldı.
+              className="w-full bg-black border border-stone-800 p-3 text-stone-300 font-sans normal-case text-lg tracking-widest focus:outline-none focus:border-red-900 focus:bg-stone-900/50 transition-all placeholder-stone-800"
               placeholder="••••••••"
             />
           </div>
