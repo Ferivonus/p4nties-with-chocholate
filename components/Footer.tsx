@@ -63,6 +63,12 @@ export default function Footer() {
                     Başlangıç
                 </Link>
             </li>
+            {/* YENİ EKLENEN LİNK */}
+            <li>
+                <Link href="/doktrin" className="hover:text-stone-100 hover:translate-x-2 transition-all inline-block duration-300">
+                    Doktrin & Terazi
+                </Link>
+            </li>
             <li>
                 <Link href="/blog" className="hover:text-stone-100 hover:translate-x-2 transition-all inline-block duration-300">
                     Arşiv & Vahiyler

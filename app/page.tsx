@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-stone-400 selection:bg-red-900 selection:text-white relative">
       
-      {/* GLOBAL DOKU */}
+      {/* GLOBAL DOKU: Eski film/noise efekti */}
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-15 pointer-events-none z-50"></div>
 
       {/* 1. HERO: MUTLAK İRADE */}
@@ -112,8 +112,18 @@ export default function Home() {
                 Kusursuz olmaya çalışma. Çürümeni sev. Öfkeni, kibrini ve arzunu kucakla. Onlar seni &quot;sen&quot; yapan yegane hazinelerindir.
               </p>
             </div>
-
           </div>
+
+          {/* YENİ EKLENEN BÖLÜM: DOKTRİN SAYFASINA YÖNLENDİRME */}
+          <div className="mt-16 text-center">
+             <Link 
+               href="/doktrin" 
+               className="inline-block text-stone-500 hover:text-red-500 transition-colors font-cinzel text-sm tracking-[0.2em] border-b border-stone-800 hover:border-red-900 pb-2 uppercase"
+             >
+               Terazi Kanunlarını Oku &rarr;
+             </Link>
+          </div>
+
         </div>
       </section>
 
@@ -167,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. BLOG TEASER: YASAK ARŞİV */}
+      {/* 4. BLOG TEASER */}
       <section className="py-24 bg-black relative">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-10 relative z-10">
           

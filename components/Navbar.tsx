@@ -7,9 +7,10 @@ import { useState, useEffect } from 'react';
 // --- SABİT VERİLER ---
 const LINKS = [
   { name: 'BAŞLANGIÇ', href: '/' },
+  { name: 'DOKTRİN', href: '/doktrin' },
   { name: 'ARŞİV', href: '/blog' },
   { name: 'HİYERARŞİ', href: '/muritler' },
-  { name: 'KAPI', href: '/iletisim' },
+  // "KAPI" linkini buradan kaldırdık çünkü "İntisap Et" butonu zaten bu işi görüyor.
 ];
 
 export default function Navbar() {
@@ -37,7 +38,7 @@ export default function Navbar() {
       <nav 
         className={`fixed top-0 w-full z-50 border-b transition-all duration-700 ease-in-out ${
           scrolled 
-            ? 'bg-black/95 border-stone-900 shadow-2xl shadow-red-950/10 py-3' 
+            ? 'bg-black/95 border-stone-800 shadow-2xl shadow-red-950/10 py-4' 
             : 'bg-transparent border-transparent py-6'
         }`}
       >
@@ -51,16 +52,16 @@ export default function Navbar() {
           >
             <div className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-700"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </div>
-            {/* Logo boyutu korundu, okunabilir */}
-            <span className="font-cinzel text-xl md:text-2xl font-bold tracking-[0.2em] text-stone-100 group-hover:text-red-700 transition-colors duration-500">
+            {/* Logo daha parlak ve belirgin */}
+            <span className="font-cinzel text-xl md:text-2xl font-black tracking-[0.15em] text-stone-100 group-hover:text-red-600 transition-colors duration-500 shadow-black drop-shadow-md">
               FERIVONIZM
             </span>
           </Link>
 
           {/* --- MASAÜSTÜ MENÜ --- */}
-          <div className="hidden md:flex gap-10 items-center">
+          <div className="hidden lg:flex gap-8 items-center">
             {LINKS.map((link) => {
               const isActive = link.href === '/' 
                 ? pathname === '/' 
@@ -70,28 +71,26 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  // GÜNCELLEME: text-[10px] -> text-xs, font-semibold eklendi
-                  className={`relative font-cinzel text-xs tracking-[0.2em] font-semibold uppercase transition-all duration-500 py-2 group ${
-                    isActive ? 'text-red-600' : 'text-stone-400 hover:text-stone-100'
+                  className={`relative font-cinzel text-sm tracking-[0.15em] font-bold uppercase transition-all duration-300 py-2 group ${
+                    isActive ? 'text-red-600' : 'text-stone-300 hover:text-white'
                   }`}
                 >
                   {link.name}
                   {/* Aktif Link Noktası */}
-                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-red-700 rounded-full transition-all duration-500 ${
-                    isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-75'
+                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-red-600 rounded-full transition-all duration-500 ${
+                    isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-75'
                   }`}></span>
                 </Link>
               );
             })}
 
-            {/* Katıl Butonu */}
+            {/* Katıl Butonu (KAPI görevi görüyor) */}
             <Link 
               href="/iletisim"
-              className="group relative px-8 py-2.5 overflow-hidden border border-stone-800 hover:border-red-900 transition-colors duration-500"
+              className="group relative ml-4 px-8 py-3 overflow-hidden border border-stone-600 hover:border-red-600 transition-colors duration-500 bg-black/40 backdrop-blur-sm"
             >
               <div className="absolute inset-0 w-0 bg-red-900 transition-all duration-[400ms] ease-out group-hover:w-full opacity-20"></div>
-              {/* GÜNCELLEME: text-[10px] -> text-xs, font-bold */}
-              <span className="relative font-cinzel text-xs tracking-[0.2em] font-bold text-stone-300 group-hover:text-red-500 uppercase">
+              <span className="relative font-cinzel text-sm tracking-[0.2em] font-bold text-stone-200 group-hover:text-red-500 uppercase">
                 İntisap Et
               </span>
             </Link>
@@ -99,14 +98,14 @@ export default function Navbar() {
 
           {/* --- MOBİL MENÜ BUTONU (HAMBURGER) --- */}
           <button 
-            className="md:hidden z-50 text-stone-300 hover:text-red-600 transition-colors p-2"
+            className="lg:hidden z-50 text-stone-200 hover:text-red-600 transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menüyü Aç/Kapat"
           >
             <div className="space-y-1.5 w-8 flex flex-col items-end">
-              <span className={`block h-px bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-8 rotate-45 translate-y-2' : 'w-8'}`}></span>
-              <span className={`block h-px bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-0 opacity-0' : 'w-6'}`}></span>
-              <span className={`block h-px bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-8 -rotate-45 -translate-y-2' : 'w-4'}`}></span>
+              <span className={`block h-0.5 bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-8 rotate-45 translate-y-2' : 'w-8'}`}></span>
+              <span className={`block h-0.5 bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-0 opacity-0' : 'w-6'}`}></span>
+              <span className={`block h-0.5 bg-current transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${isMobileMenuOpen ? 'w-8 -rotate-45 -translate-y-2' : 'w-4'}`}></span>
             </div>
           </button>
         </div>
@@ -114,12 +113,12 @@ export default function Navbar() {
 
       {/* --- MOBİL MENÜ OVERLAY --- */}
       <div 
-        className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] flex flex-col items-center justify-center space-y-10 border-l border-stone-900 md:hidden ${
+        className={`fixed inset-0 bg-stone-950/98 backdrop-blur-xl z-40 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] flex flex-col items-center justify-center space-y-10 border-l border-stone-800 lg:hidden ${
           isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
         {/* Dekoratif IX sembolü */}
-        <div className="absolute top-10 right-10 text-stone-900 font-cinzel text-9xl opacity-20 pointer-events-none select-none animate-pulse">
+        <div className="absolute top-10 right-10 text-stone-800 font-cinzel text-9xl opacity-30 pointer-events-none select-none animate-pulse">
           IX
         </div>
 
@@ -128,8 +127,8 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             onClick={() => setIsMobileMenuOpen(false)}
-            // Mobil font boyutu zaten büyüktü (text-3xl), korundu.
-            className="font-cinzel text-3xl text-stone-400 hover:text-red-600 tracking-[0.1em] uppercase transition-all duration-500 hover:tracking-[0.2em]"
+            // Mobil için yüksek kontrast
+            className="font-cinzel text-3xl font-bold text-stone-300 hover:text-red-500 tracking-[0.1em] uppercase transition-all duration-500 hover:tracking-[0.2em]"
             style={{ transitionDelay: `${isMobileMenuOpen ? index * 100 + 200 : 0}ms` }}
           >
             {link.name}
@@ -137,14 +136,15 @@ export default function Navbar() {
         ))}
 
         <div 
-          className="w-12 h-px bg-stone-800 my-8 transition-all duration-1000" 
+          className="w-16 h-px bg-stone-700 my-8 transition-all duration-1000" 
           style={{ transitionDelay: '600ms', opacity: isMobileMenuOpen ? 1 : 0 }}
         ></div>
         
+        {/* Mobil menüdeki 'Karanlığa Katıl' linki de İletişim'e gidiyor, bu yüzden KAPI'ya listede gerek yok */}
         <Link 
             href="/iletisim"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-stone-600 font-cormorant italic text-xl hover:text-stone-300 transition-colors"
+            className="text-stone-500 font-cormorant italic text-2xl hover:text-stone-200 transition-colors"
             style={{ transitionDelay: '700ms', opacity: isMobileMenuOpen ? 1 : 0 }}
         >
             &quot;Karanlığa katıl.&quot;
